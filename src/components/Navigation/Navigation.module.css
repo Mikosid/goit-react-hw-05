@@ -1,0 +1,12 @@
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  margin-right: 15px;
+}
+
+.active {
+  color: orangered;
+}

@@ -1,0 +1,12 @@
+.MovieDetailsImage {
+  display: flex;
+  justify-content: flex-start;
+}
+.MovieDetailsList {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+}
+.MovieDetailsOverview {
+  width: 50%;
+}

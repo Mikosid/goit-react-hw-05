@@ -1,0 +1,7 @@
+.MovieCastList {
+  padding: 0;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+}
