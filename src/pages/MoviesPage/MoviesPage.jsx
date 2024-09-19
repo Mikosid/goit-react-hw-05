@@ -25,7 +25,7 @@ export default function MoviesPage() {
   return (
     <div className={clsx(css.MoviesPageContainer)}>
       <MovieSearch />
-      {movies.length > 0 && <MovieList home={movies} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
 }

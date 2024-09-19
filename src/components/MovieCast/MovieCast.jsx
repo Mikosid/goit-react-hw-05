@@ -7,18 +7,21 @@ import clsx from "clsx";
 import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
-  const [casts, setCasts] = useState([]);
+  const [casts, setCasts] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovieCast = async () => {
+      setLoading(true);
       const castsData = await getMovieCast(movieId);
       setCasts(castsData.cast);
+      setLoading(false);
     };
     fetchMovieCast();
   }, [movieId]);
 
-  if (!casts) {
+  if (loading) {
     return <Loader />;
   }
   if (casts.length === 0) {

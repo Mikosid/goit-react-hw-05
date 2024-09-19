@@ -8,7 +8,7 @@ import css from "./HomePage.module.css";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [home, setHome] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -25,7 +25,7 @@ export default function Home() {
         setLoading(true);
         setError(false);
         const response = await axios.get(url, options);
-        setHome(response.data.results);
+        setMovies(response.data.results);
       } catch (error) {
         setError(true);
         console.log(error);
@@ -40,7 +40,7 @@ export default function Home() {
     <div className={css.MoviesPageContainer}>
       {loading && <Loader />}
       {error && <p>Something went wrong. Please try again later.</p>}
-      {!loading && !error && <MovieList home={home} />}
+      {!loading && !error && <MovieList movies={movies} />}
     </div>
   );
 }
