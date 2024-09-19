@@ -30,8 +30,8 @@ export default function MovieCast() {
   return (
     <div>
       <ul className={clsx(css.MovieCastList)}>
-        {casts.map((actor) => (
-          <li key={actor.id}>
+        {casts.map((actor, index) => (
+          <li key={`${actor.id}-${index}`}>
             <img
               alt={actor.name}
               width="150px"
